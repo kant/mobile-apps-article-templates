@@ -178,7 +178,8 @@ define([
                     var embedData;
                     // var height = node.getAttribute("style");
                     // console.info("Style Attribute is "+height);
-                    console.log("iFrame height at the beginning is "+node.style.height);
+                    // node.setAttribute("sandbox", "allow-scripts allow-same-origin");
+                    // console.log("iFrame height at the beginning is "+node.style.height);
                     if (!node.srcdoc || node.srcdoc == "") 
                     {
                         embedData = node.src; 
