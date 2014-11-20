@@ -3,6 +3,14 @@
 title: Loading
 name: loading
 category: Modules
+
+
+
+
+
+
+
+
 ---
 Display loading animation to provide feedback to the user.
 
@@ -28,5 +36,20 @@ Display loading animation to provide feedback to the user.
 
     &.loading--visible {
         display: block;
+    }
+}
+
+.loader {
+   /* background: url('../img/loading.gif') center center 48px 48px no-repeat;*/
+    background-image:url('../img/loading.gif');
+    background-position: center center;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+    /*background-color: #FFF !important;*/
+    min-height: 100px;
+    iframe {
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
     }
 }

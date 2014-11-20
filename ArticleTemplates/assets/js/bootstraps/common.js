@@ -84,11 +84,115 @@ define([
                 require(['fence'], function(fence) {
                     $("iframe.fenced").each(function(node) {
                         fence.render(node);
+                        console.info("Embeds: iFrame Fenced");
                     });
                 });
                 
             };
             window.loadEmbeds();
+        },
+
+        lazyLoad: function() {
+        /*
+        Lazy Loads functions:
+        
+        dataSrc(): 
+                - Creates data-embed-content attribute & it assigns it srcdoc's value
+                - Assigns srcdoc value to null
+                - Assigns Y doc position (calculated from parent of iFrame node as Iframe itself gives position 0)
+                - Adds class loader (loading animation) to parent of iFrame
+        
+        inView():
+                - Gets device viewport height
+                - Gets Y position called inRangeStart
+                - Calcs Range which is viewport x2
+                - Calcs inRangeEnd (inRangeStart + inRange)
+
+        onscroll():
+                - Debounce effect with setTimeout and clearTimeout
+                - Calls inView function once scrolling stops (debounced with setTimeout to 500 ms)
+        */    
+            var timeoutId;
+
+            window.inView = function () {
+
+                var originalSrc;
+
+                var viewportHeight = window.innerHeight;
+                console.log("viewportHeight "+viewportHeight);
+
+                var inRangeStart = window.pageYOffset - viewportHeight;
+                console.log("y offset "+window.pageYOffset+" minus one view port = inRangeStart "+inRangeStart);
+                
+                var inRange = viewportHeight * 2;
+                console.log("inRange "+inRange);
+                
+                var inRangeEnd = inRangeStart + inRange;
+                console.log("inRangeEnd "+inRangeEnd);
+
+                function srcSwap(node, src) {
+                    (node.hasAttribute("srcdoc")) ? node.setAttribute("srcdoc", src) : node.setAttribute("src", src);
+                    node.setAttribute("data-embed-content", "");
+                    // node.height node.parentNode.classList.remove('loader');
+                    console.log("iFrame height is "+node.style.height);
+                } 
+
+                $("iframe").each(function(node) {
+                    
+                    var elPos = node.parentNode.offsetTop;  
+                    console.log("iFrame position is "+elPos);
+                    console.log("Loop iFrame inRangeStart "+inRangeStart+" inRangeEnd "+inRangeEnd);
+
+                    if (elPos >= inRangeStart && elPos <= inRangeEnd) 
+                    {   
+                        originalSrc = node.getAttribute("data-embed-content");
+                        if (originalSrc !=="") {
+                        console.log("Within range so loading iFrame "+elPos+" "+originalSrc);
+                        srcSwap(node, originalSrc);
+                        } else {
+                        console.log("Within range BUT NOT loading iFrame "+elPos+" as no data attribute, maybe previously loaded "+originalSrc);    
+                        }
+                    } else {
+                        console.log("Not in range");
+                    }
+                
+                });              
+            };
+
+            // Called when the window is scrolled.
+            window.onscroll = function (event) {
+              
+              if(timeoutId){
+                    clearTimeout(timeoutId);  
+              }
+                timeoutId = setTimeout(function(){
+                console.log("scroll event detected! " + window.pageXOffset + " " + window.pageYOffset);
+                window.inView(); 
+              }, 500);
+            };
+
+            // Remove iFrame content srcdoc at runtime to prevent loading, store in a data attribute
+            window.dataSrc = function() {
+            
+            $("iframe").each(function(node) {
+                    var embedData;
+                    // var height = node.getAttribute("style");
+                    // console.info("Style Attribute is "+height);
+                    console.log("iFrame height at the beginning is "+node.style.height);
+                    if (!node.srcdoc || node.srcdoc == "") 
+                    {
+                        embedData = node.src; 
+                        node.src = "about:blank";
+                    } else {
+                        embedData = node.srcdoc; 
+                        node.srcdoc = "about:blank";
+                    }
+                    console.info("Embed Data Attribute is "+embedData);
+                    node.setAttribute("data-embed-content", embedData);
+                    node.parentNode.classList.add('loader');
+                });       
+            };
+            window.dataSrc();
         },
 
         scrollToAnchor: function () {
@@ -239,6 +343,7 @@ define([
             modules.loadComments();
             modules.loadCards();
             modules.loadEmbeds();
+            modules.lazyLoad();
             modules.scrollToAnchor();
             modules.loadInteractives();
             modules.offline();
