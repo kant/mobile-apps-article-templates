@@ -93,8 +93,7 @@ define([
         },
 
         lazyLoad: function() {
-        /*
-        Lazy Loads functions:
+        /* Lazy Loads functions:
         
         dataSrc(): 
                 - Creates data-embed-content attribute & it assigns it srcdoc's value
@@ -130,11 +129,16 @@ define([
                 var inRangeEnd = inRangeStart + inRange;
                 console.log("inRangeEnd "+inRangeEnd);
 
+                function showEmbed(node) {
+                    node.setAttribute("style", "display:block;");
+                    node.parentNode.classList.remove('loader');
+                    console.log("Removed Attribute Height and Loader class");
+                }
+
                 function srcSwap(node, src) {
                     (node.hasAttribute("srcdoc")) ? node.setAttribute("srcdoc", src) : node.setAttribute("src", src);
                     node.setAttribute("data-embed-content", "");
-                    // node.height node.parentNode.classList.remove('loader');
-                    console.log("iFrame height is "+node.style.height);
+                    setTimeout(showEmbed(node), 1000);
                 } 
 
                 $("iframe").each(function(node) {
@@ -176,10 +180,6 @@ define([
             
             $("iframe").each(function(node) {
                     var embedData;
-                    // var height = node.getAttribute("style");
-                    // console.info("Style Attribute is "+height);
-                    // node.setAttribute("sandbox", "allow-scripts allow-same-origin");
-                    // console.log("iFrame height at the beginning is "+node.style.height);
                     if (!node.srcdoc || node.srcdoc == "") 
                     {
                         embedData = node.src; 
@@ -191,6 +191,7 @@ define([
                     console.info("Embed Data Attribute is "+embedData);
                     node.setAttribute("data-embed-content", embedData);
                     node.parentNode.classList.add('loader');
+                    node.setAttribute("style", "display:none;");
                 });       
             };
             window.dataSrc();
