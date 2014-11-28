@@ -98,7 +98,6 @@ define([
         dataSrc(): 
                 - Creates data-embed-content attribute & it assigns it srcdoc's value
                 - Assigns srcdoc value to null
-                - Assigns Y doc position (calculated from parent of iFrame node as Iframe itself gives position 0)
                 - Adds class loader (loading animation) to parent of iFrame
         
         inView():
@@ -126,7 +125,8 @@ define([
                 var inRange = viewportHeight * 2;
                 console.log("inRange "+inRange);
                 
-                var inRangeEnd = inRangeStart + inRange;
+                // var inRangeEnd = inRangeStart + inRange;
+                var inRangeEnd = window.pageYOffset + inRange;
                 console.log("inRangeEnd "+inRangeEnd);
 
                 function showEmbed(node) {
