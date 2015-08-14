@@ -6677,9 +6677,20 @@
     padding: 3px 0;
     font-weight: 500; }
   #sandbox .element-rich-link, #sandbox .element-membership {
-    border-top: 1px dotted #bdbdbd;
-    border-bottom: 1px dotted #bdbdbd;
-    margin-bottom: 8px;
+    /* border-top: 1px dotted color(neutral-3);
+     border-bottom: 1px dotted color(neutral-3);
+     margin-bottom: $gs-baseline / 1.5;
+     float: left;
+     clear: left;
+     width: 13.75rem; */
+    color: #333;
+    background-color: #f6f6f6;
+    border-top: 1px solid #4bc6df;
+    border-bottom: 1px solid #dcdad5;
+    display: block;
+    position: relative;
+    -webkit-transition: all .15s ease-out;
+    transition: all .15s ease-out;
     float: left;
     clear: left;
     width: 13.75rem;
