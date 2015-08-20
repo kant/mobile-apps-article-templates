@@ -5868,6 +5868,97 @@ Display a comment article card.
   .card--analysis .card__footer {
     color: #767676; }
 
+.element-rich-link, .element-membership {
+  /* border-top: 1px dotted color(neutral-3);
+   border-bottom: 1px dotted color(neutral-3);
+   margin-bottom: $gs-baseline / 1.5;
+   float: left;
+   clear: left;
+   width: 13.75rem; */
+  display: block;
+  position: relative;
+  -webkit-transition: all .15s ease-out;
+  transition: all .15s ease-out;
+  float: left;
+  clear: left;
+  width: 14.75rem;
+  margin: 4px 20px 6px 0;
+    /*&:before{
+		content: 'More on this topic';
+		@extend %flyer-header;   
+    }*/ }
+  @media all and (min-width: 30em) {
+    .element-rich-link, .element-membership {
+      width: 24.75rem;
+      margin: 4px 20px 6px 0; } }
+  @media all and (min-width: 54.375em) {
+    .element-rich-link, .element-membership {
+      width: 30.75rem;
+      margin: 4px 20px 6px 0; } }
+  .element-rich-link img, .element-membership img {
+    width: 100%;
+    height: auto; }
+  .element-rich-link a, .element-membership a {
+    text-shadow: none !important;
+    margin: 0 0 25px 0; }
+  .element-rich-link.tone-news, .element-membership.tone-news {
+    color: #333;
+    background-color: #f6f6f6;
+    border-top: 1px solid #4bc6df;
+    border-bottom: 1px solid #dcdad5; }
+    .element-rich-link.tone-news a, .element-membership.tone-news a {
+      color: #333; }
+    .element-rich-link.tone-news:after, .element-membership.tone-news:after {
+      content: "";
+      color: #005689;
+      font-family: 'Guardian Icons';
+      padding: 0 0 0 5px; }
+    .element-rich-link.tone-news:hover:after, .element-membership.tone-news:hover:after {
+      content: ""; }
+  .element-rich-link.tone-comment, .element-membership.tone-comment {
+    background-color: #e3e1dc;
+    border-top: 1px solid #f39f33;
+    border-bottom: 1px solid #dcdad5; }
+    .element-rich-link.tone-comment a, .element-membership.tone-comment a {
+      color: #2d2a26; }
+    .element-rich-link.tone-comment a:before, .element-membership.tone-comment a:before {
+      content: " ";
+      font-family: 'Guardian Icons';
+      color: #e6711b;
+      font-size: 1.9rem; }
+    .element-rich-link.tone-comment:after, .element-membership.tone-comment:after {
+      content: "";
+      color: #e6711b;
+      font-family: 'Guardian Icons';
+      padding: 0 0 0 5px; }
+    .element-rich-link.tone-comment:hover:after, .element-membership.tone-comment:hover:after {
+      content: ""; }
+  .element-rich-link.tone-feature, .element-membership.tone-feature {
+    background-color: #951c55;
+    border-top: 1px solid #b82266;
+    border-bottom: 1px solid #dcdad5; }
+    .element-rich-link.tone-feature a, .element-membership.tone-feature a {
+      color: #fff; }
+    .element-rich-link.tone-feature:after, .element-membership.tone-feature:after {
+      content: "";
+      color: #fff;
+      font-family: 'Guardian Icons';
+      padding: 0 0 0 5px; }
+    .element-rich-link.tone-feature:hover:after, .element-membership.tone-feature:hover:after {
+      content: ""; }
+  .element-rich-link p, .element-membership p {
+    margin: 0px 0px !important;
+    padding: 0 5px 0 5px;
+    line-height: 18px; }
+  .element-rich-link a, .element-membership a {
+    font-size: 100%;
+    font-family: "Guardian Egyptian Web", Georgia, serif;
+    font-weight: 500;
+    display: block;
+    padding: 0;
+    border: 0;
+    background-image: none !important; }
+
 /*doc
 ---
 title: Container
@@ -6023,97 +6114,6 @@ Default styling no JavaScript enhancement:
   color: #767676;
   padding: 3px 0;
   font-weight: 500; }
-
-.element-rich-link, .element-membership {
-  /* border-top: 1px dotted color(neutral-3);
-   border-bottom: 1px dotted color(neutral-3);
-   margin-bottom: $gs-baseline / 1.5;
-   float: left;
-   clear: left;
-   width: 13.75rem; */
-  display: block;
-  position: relative;
-  -webkit-transition: all .15s ease-out;
-  transition: all .15s ease-out;
-  float: left;
-  clear: left;
-  width: 14.75rem;
-  margin: 4px 20px 6px 0;
-    /*&:before{
-		content: 'More on this topic';
-		@extend %flyer-header;   
-    }*/ }
-  @media all and (min-width: 30em) {
-    .element-rich-link, .element-membership {
-      width: 24.75rem;
-      margin: 4px 20px 6px 0; } }
-  @media all and (min-width: 54.375em) {
-    .element-rich-link, .element-membership {
-      width: 30.75rem;
-      margin: 4px 20px 6px 0; } }
-  .element-rich-link img, .element-membership img {
-    width: 100%;
-    height: auto; }
-  .element-rich-link a, .element-membership a {
-    text-shadow: none !important;
-    margin: 0 0 25px 0; }
-  .element-rich-link.tone-news, .element-membership.tone-news {
-    color: #333;
-    background-color: #f6f6f6;
-    border-top: 1px solid #4bc6df;
-    border-bottom: 1px solid #dcdad5; }
-    .element-rich-link.tone-news a, .element-membership.tone-news a {
-      color: #333; }
-    .element-rich-link.tone-news:after, .element-membership.tone-news:after {
-      content: "";
-      color: #005689;
-      font-family: 'Guardian Icons';
-      padding: 0 0 0 5px; }
-    .element-rich-link.tone-news:hover:after, .element-membership.tone-news:hover:after {
-      content: ""; }
-  .element-rich-link.tone-comment, .element-membership.tone-comment {
-    background-color: #e3e1dc;
-    border-top: 1px solid #f39f33;
-    border-bottom: 1px solid #dcdad5; }
-    .element-rich-link.tone-comment a, .element-membership.tone-comment a {
-      color: #2d2a26; }
-    .element-rich-link.tone-comment a:before, .element-membership.tone-comment a:before {
-      content: " ";
-      font-family: 'Guardian Icons';
-      color: #e6711b;
-      font-size: 1.9rem; }
-    .element-rich-link.tone-comment:after, .element-membership.tone-comment:after {
-      content: "";
-      color: #e6711b;
-      font-family: 'Guardian Icons';
-      padding: 0 0 0 5px; }
-    .element-rich-link.tone-comment:hover:after, .element-membership.tone-comment:hover:after {
-      content: ""; }
-  .element-rich-link.tone-feature, .element-membership.tone-feature {
-    background-color: #951c55;
-    border-top: 1px solid #b82266;
-    border-bottom: 1px solid #dcdad5; }
-    .element-rich-link.tone-feature a, .element-membership.tone-feature a {
-      color: #fff; }
-    .element-rich-link.tone-feature:after, .element-membership.tone-feature:after {
-      content: "";
-      color: #fff;
-      font-family: 'Guardian Icons';
-      padding: 0 0 0 5px; }
-    .element-rich-link.tone-feature:hover:after, .element-membership.tone-feature:hover:after {
-      content: ""; }
-  .element-rich-link p, .element-membership p {
-    margin: 0px 0px !important;
-    padding: 0 5px 0 5px;
-    line-height: 18px; }
-  .element-rich-link a, .element-membership a {
-    font-size: 100%;
-    font-family: "Guardian Egyptian Web", Georgia, serif;
-    font-weight: 500;
-    display: block;
-    padding: 0;
-    border: 0;
-    background-image: none !important; }
 
 .element-rich-link {
   /* a:before {
