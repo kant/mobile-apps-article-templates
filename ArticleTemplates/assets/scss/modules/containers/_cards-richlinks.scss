@@ -1,8 +1,40 @@
-@mixin rich-link-byline{
-	    font-weight: 600;
-		display: none;	
+@mixin rich-link-byline($color){
+	font-weight: 600;
+	display: none;
+	color: color($color);
+	
 }
 
+@mixin rich-link-arrow($color){
+	content:"";
+	color: color($color);
+	font-family: 'Guardian Icons';
+	padding: 0 0 0 5px;
+}
+
+@mixin rich-link-quote($color){
+	content: " ";
+	font-family: 'Guardian Icons';
+	font-size: 1.9rem;  
+	color: color($color);  
+}
+
+// Blink
+@-webkit-keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.blink {
+    -webkit-animation-name: blink;
+    animation-name: blink;
+}
 
 .element-rich-link, .element-membership {
    /* border-top: 1px dotted color(neutral-3);
@@ -26,6 +58,10 @@
     @include mq(mobileLandscapeWide) {
         width: $gs-span-wide;
         margin: $gs-baseline / 3 $gs-gutter $gs-baseline / 2 0;
+    }
+    
+    & .live-ticker{
+	    display: none;
     }
     
     & img{
@@ -52,16 +88,12 @@
     
     &.has-quote{
 		& a:before{
-		content: " ";
-		font-family: 'Guardian Icons';
-		color: color(tone-news);
-		font-size: 1.9rem;    
+		@include rich-link-quote(tone-news);  
 	    }
     }
     
     & .rich-link-byline{
-	    color: color(tone-news);
-	    @include rich-link-byline;
+	    @include rich-link-byline(tone-news);
     }
     
     &.has-byline{
@@ -76,10 +108,7 @@
     }
     
     &:after{
-	    content:"";
-	    color: color(tone-news);
-		font-family: 'Guardian Icons';
-		padding: 0 0 0 5px;
+		@include rich-link-arrow(tone-news);
     }
     
     &:hover:after{
@@ -101,8 +130,7 @@
     }
     
     & .rich-link-byline{
-	    color: color(tone-comment);
-	    @include rich-link-byline;
+	    @include rich-link-byline(tone-comment);
     }
     
     &.has-byline{
@@ -119,10 +147,8 @@
     }
     
     &:after{
-	    content:"";
-	    color: color(tone-comment);
-		font-family: 'Guardian Icons';
-		padding: 0 0 0 5px;
+		@include rich-link-arrow(tone-comment);
+		
     }
     
     &:hover:after{
@@ -139,16 +165,12 @@
     
     &.has-quote{
 	    & a:before{
-			content: " ";
-			font-family: 'Guardian Icons';
-			color: color(tone-feature1-accent2);
-			font-size: 1.9rem;    
+			@include rich-link-quote(tone-feature1-accent2);    
 	    }
     }
     
     & .rich-link-byline{
-	    color: color(tone-feature1-accent2);
-	    @include rich-link-byline;
+	    @include rich-link-byline(tone-feature1-accent2);
     }
     
     &.has-byline{
@@ -163,10 +185,7 @@
     }
     
     &:after{
-	    content:"";
-	    color: color(tone-feature1-accent2);
-		font-family: 'Guardian Icons';
-		padding: 0 0 0 5px;
+		@include rich-link-arrow(tone-feature1-accent2);
     }
     
     &:hover:after{
@@ -176,14 +195,74 @@
     
     //Card styles for media rich link
     
-     &.tone-media{
+    &.tone-media{
 	    background-color: color(shade-1);
 	    border-top: 1px solid color(tone-media);
 	    border-bottom: 1px solid color(shade-4);
     
     & .rich-link-byline{
-	    color: color(tone-media);
-	    @include rich-link-byline;
+	    @include rich-link-byline(tone-media);
+    }
+    
+    &.has-byline{
+	    & .rich-link-byline{
+		    display: block;
+	    }
+    }
+    
+    &.has-quote{
+	    & a:before{
+			@include rich-link-quote(tone-media);    
+	    }
+    }
+    
+    & a{
+		color: color(shade-7);
+    }
+    
+    &:after{
+		@include rich-link-arrow(tone-media);
+    }
+    
+    &:hover:after{
+	    content: "";
+    }
+    }
+    
+    //Card styles for Live blog 
+    
+    &.tone-live{
+	    background-color: color(tone-live);
+	    border-top: 1px solid color(tone-feature1-accent2);
+	    border-bottom: 1px solid color(shade-4);    
+	
+	& .live-ticker{
+		display: block;
+		font-family: 'Guardian Agate Sans 1 Web';
+		font-weight: bold;
+		float: left;
+		color: white;
+		height: 20px;
+		line-height: 22px;
+		margin: 0 8px 0 5px;
+		
+		& .bullet{
+			float: left;
+			margin: 6px 0 0 0;
+			-webkit-animation: blink 1.5s ease-in infinite;
+			animation-name: blink;
+			color: white;
+			
+			&:before{
+			background-color: white;	
+			}
+		}
+	}
+	
+	
+	    
+	& .rich-link-byline{
+	    @include rich-link-byline(tone-feature1-accent2);
     }
     
     &.has-byline{
@@ -195,10 +274,7 @@
     
     &.has-quote{
 	    & a:before{
-			content: " ";
-			font-family: 'Guardian Icons';
-			color: color(tone-media);
-			font-size: 1.9rem;    
+			@include rich-link-quote(tone-feature1-accent2);    
 	    }
     }
     
@@ -207,15 +283,12 @@
     }
     
     &:after{
-	    content:"";
-	    color: color(tone-media);
-		font-family: 'Guardian Icons';
-		padding: 0 0 0 5px;
+		@include rich-link-arrow(tone-feature1-accent2);
     }
     
     &:hover:after{
 	    content: "";
-    }
+    }       
     }
     
     /*&:before{

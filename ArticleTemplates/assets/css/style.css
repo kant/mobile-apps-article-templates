@@ -5868,6 +5868,24 @@ Display a comment article card.
   .card--analysis .card__footer {
     color: #767676; }
 
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.blink {
+  -webkit-animation-name: blink;
+  animation-name: blink; }
+
 .element-rich-link, .element-membership {
   /* border-top: 1px dotted color(neutral-3);
    border-bottom: 1px dotted color(neutral-3);
@@ -5895,6 +5913,8 @@ Display a comment article card.
     .element-rich-link, .element-membership {
       width: 30.75rem;
       margin: 4px 20px 6px 0; } }
+  .element-rich-link .live-ticker, .element-membership .live-ticker {
+    display: none; }
   .element-rich-link img, .element-membership img {
     width: 100%;
     height: auto; }
@@ -5911,12 +5931,12 @@ Display a comment article card.
     .element-rich-link.tone-news.has-quote a:before, .element-membership.tone-news.has-quote a:before {
       content: " ";
       font-family: 'Guardian Icons';
-      color: #005689;
-      font-size: 1.9rem; }
+      font-size: 1.9rem;
+      color: #005689; }
     .element-rich-link.tone-news .rich-link-byline, .element-membership.tone-news .rich-link-byline {
-      color: #005689;
       font-weight: 600;
-      display: none; }
+      display: none;
+      color: #005689; }
     .element-rich-link.tone-news.has-byline .rich-link-byline, .element-membership.tone-news.has-byline .rich-link-byline {
       display: block; }
     .element-rich-link.tone-news a, .element-membership.tone-news a {
@@ -5935,9 +5955,9 @@ Display a comment article card.
     .element-rich-link.tone-comment a, .element-membership.tone-comment a {
       color: #2d2a26; }
     .element-rich-link.tone-comment .rich-link-byline, .element-membership.tone-comment .rich-link-byline {
-      color: #e6711b;
       font-weight: 600;
-      display: none; }
+      display: none;
+      color: #e6711b; }
     .element-rich-link.tone-comment.has-byline .rich-link-byline, .element-membership.tone-comment.has-byline .rich-link-byline {
       display: block; }
     .element-rich-link.tone-comment a:before, .element-membership.tone-comment a:before {
@@ -5959,12 +5979,12 @@ Display a comment article card.
     .element-rich-link.tone-feature.has-quote a:before, .element-membership.tone-feature.has-quote a:before {
       content: " ";
       font-family: 'Guardian Icons';
-      color: #fdadba;
-      font-size: 1.9rem; }
+      font-size: 1.9rem;
+      color: #fdadba; }
     .element-rich-link.tone-feature .rich-link-byline, .element-membership.tone-feature .rich-link-byline {
-      color: #fdadba;
       font-weight: 600;
-      display: none; }
+      display: none;
+      color: #fdadba; }
     .element-rich-link.tone-feature.has-byline .rich-link-byline, .element-membership.tone-feature.has-byline .rich-link-byline {
       display: block; }
     .element-rich-link.tone-feature a, .element-membership.tone-feature a {
@@ -5981,16 +6001,16 @@ Display a comment article card.
     border-top: 1px solid #fb0;
     border-bottom: 1px solid #dcdad5; }
     .element-rich-link.tone-media .rich-link-byline, .element-membership.tone-media .rich-link-byline {
-      color: #fb0;
       font-weight: 600;
-      display: none; }
+      display: none;
+      color: #fb0; }
     .element-rich-link.tone-media.has-byline .rich-link-byline, .element-membership.tone-media.has-byline .rich-link-byline {
       display: block; }
     .element-rich-link.tone-media.has-quote a:before, .element-membership.tone-media.has-quote a:before {
       content: " ";
       font-family: 'Guardian Icons';
-      color: #fb0;
-      font-size: 1.9rem; }
+      font-size: 1.9rem;
+      color: #fb0; }
     .element-rich-link.tone-media a, .element-membership.tone-media a {
       color: #fff; }
     .element-rich-link.tone-media:after, .element-membership.tone-media:after {
@@ -5999,6 +6019,47 @@ Display a comment article card.
       font-family: 'Guardian Icons';
       padding: 0 0 0 5px; }
     .element-rich-link.tone-media:hover:after, .element-membership.tone-media:hover:after {
+      content: ""; }
+  .element-rich-link.tone-live, .element-membership.tone-live {
+    background-color: #b51800;
+    border-top: 1px solid #fdadba;
+    border-bottom: 1px solid #dcdad5; }
+    .element-rich-link.tone-live .live-ticker, .element-membership.tone-live .live-ticker {
+      display: block;
+      font-family: 'Guardian Agate Sans 1 Web';
+      font-weight: bold;
+      float: left;
+      color: white;
+      height: 20px;
+      line-height: 22px;
+      margin: 0 8px 0 5px; }
+      .element-rich-link.tone-live .live-ticker .bullet, .element-membership.tone-live .live-ticker .bullet {
+        float: left;
+        margin: 6px 0 0 0;
+        -webkit-animation: blink 1.5s ease-in infinite;
+        animation-name: blink;
+        color: white; }
+        .element-rich-link.tone-live .live-ticker .bullet:before, .element-membership.tone-live .live-ticker .bullet:before {
+          background-color: white; }
+    .element-rich-link.tone-live .rich-link-byline, .element-membership.tone-live .rich-link-byline {
+      font-weight: 600;
+      display: none;
+      color: #fdadba; }
+    .element-rich-link.tone-live.has-byline .rich-link-byline, .element-membership.tone-live.has-byline .rich-link-byline {
+      display: block; }
+    .element-rich-link.tone-live.has-quote a:before, .element-membership.tone-live.has-quote a:before {
+      content: " ";
+      font-family: 'Guardian Icons';
+      font-size: 1.9rem;
+      color: #fdadba; }
+    .element-rich-link.tone-live a, .element-membership.tone-live a {
+      color: #fff; }
+    .element-rich-link.tone-live:after, .element-membership.tone-live:after {
+      content: "";
+      color: #fdadba;
+      font-family: 'Guardian Icons';
+      padding: 0 0 0 5px; }
+    .element-rich-link.tone-live:hover:after, .element-membership.tone-live:hover:after {
       content: ""; }
   .element-rich-link p, .element-membership p {
     margin: 0px 0px !important;

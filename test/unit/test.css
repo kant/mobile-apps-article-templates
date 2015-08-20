@@ -6590,6 +6590,23 @@
     #sandbox .card--analysis .card__standfirst,
     #sandbox .card--analysis .card__footer {
       color: #767676; }
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+  #sandbox .blink {
+    -webkit-animation-name: blink;
+    animation-name: blink; }
   #sandbox .element-rich-link, #sandbox .element-membership {
     /* border-top: 1px dotted color(neutral-3);
      border-bottom: 1px dotted color(neutral-3);
@@ -6617,6 +6634,8 @@
       #sandbox .element-rich-link, #sandbox .element-membership {
         width: 30.75rem;
         margin: 4px 20px 6px 0; } }
+    #sandbox .element-rich-link .live-ticker, #sandbox .element-membership .live-ticker {
+      display: none; }
     #sandbox .element-rich-link img, #sandbox .element-membership img {
       width: 100%;
       height: auto; }
@@ -6633,12 +6652,12 @@
       #sandbox .element-rich-link.tone-news.has-quote a:before, #sandbox .element-membership.tone-news.has-quote a:before {
         content: " ";
         font-family: 'Guardian Icons';
-        color: #005689;
-        font-size: 1.9rem; }
+        font-size: 1.9rem;
+        color: #005689; }
       #sandbox .element-rich-link.tone-news .rich-link-byline, #sandbox .element-membership.tone-news .rich-link-byline {
-        color: #005689;
         font-weight: 600;
-        display: none; }
+        display: none;
+        color: #005689; }
       #sandbox .element-rich-link.tone-news.has-byline .rich-link-byline, #sandbox .element-membership.tone-news.has-byline .rich-link-byline {
         display: block; }
       #sandbox .element-rich-link.tone-news a, #sandbox .element-membership.tone-news a {
@@ -6657,9 +6676,9 @@
       #sandbox .element-rich-link.tone-comment a, #sandbox .element-membership.tone-comment a {
         color: #2d2a26; }
       #sandbox .element-rich-link.tone-comment .rich-link-byline, #sandbox .element-membership.tone-comment .rich-link-byline {
-        color: #e6711b;
         font-weight: 600;
-        display: none; }
+        display: none;
+        color: #e6711b; }
       #sandbox .element-rich-link.tone-comment.has-byline .rich-link-byline, #sandbox .element-membership.tone-comment.has-byline .rich-link-byline {
         display: block; }
       #sandbox .element-rich-link.tone-comment a:before, #sandbox .element-membership.tone-comment a:before {
@@ -6681,12 +6700,12 @@
       #sandbox .element-rich-link.tone-feature.has-quote a:before, #sandbox .element-membership.tone-feature.has-quote a:before {
         content: " ";
         font-family: 'Guardian Icons';
-        color: #fdadba;
-        font-size: 1.9rem; }
+        font-size: 1.9rem;
+        color: #fdadba; }
       #sandbox .element-rich-link.tone-feature .rich-link-byline, #sandbox .element-membership.tone-feature .rich-link-byline {
-        color: #fdadba;
         font-weight: 600;
-        display: none; }
+        display: none;
+        color: #fdadba; }
       #sandbox .element-rich-link.tone-feature.has-byline .rich-link-byline, #sandbox .element-membership.tone-feature.has-byline .rich-link-byline {
         display: block; }
       #sandbox .element-rich-link.tone-feature a, #sandbox .element-membership.tone-feature a {
@@ -6703,16 +6722,16 @@
       border-top: 1px solid #fb0;
       border-bottom: 1px solid #dcdad5; }
       #sandbox .element-rich-link.tone-media .rich-link-byline, #sandbox .element-membership.tone-media .rich-link-byline {
-        color: #fb0;
         font-weight: 600;
-        display: none; }
+        display: none;
+        color: #fb0; }
       #sandbox .element-rich-link.tone-media.has-byline .rich-link-byline, #sandbox .element-membership.tone-media.has-byline .rich-link-byline {
         display: block; }
       #sandbox .element-rich-link.tone-media.has-quote a:before, #sandbox .element-membership.tone-media.has-quote a:before {
         content: " ";
         font-family: 'Guardian Icons';
-        color: #fb0;
-        font-size: 1.9rem; }
+        font-size: 1.9rem;
+        color: #fb0; }
       #sandbox .element-rich-link.tone-media a, #sandbox .element-membership.tone-media a {
         color: #fff; }
       #sandbox .element-rich-link.tone-media:after, #sandbox .element-membership.tone-media:after {
@@ -6721,6 +6740,47 @@
         font-family: 'Guardian Icons';
         padding: 0 0 0 5px; }
       #sandbox .element-rich-link.tone-media:hover:after, #sandbox .element-membership.tone-media:hover:after {
+        content: ""; }
+    #sandbox .element-rich-link.tone-live, #sandbox .element-membership.tone-live {
+      background-color: #b51800;
+      border-top: 1px solid #fdadba;
+      border-bottom: 1px solid #dcdad5; }
+      #sandbox .element-rich-link.tone-live .live-ticker, #sandbox .element-membership.tone-live .live-ticker {
+        display: block;
+        font-family: 'Guardian Agate Sans 1 Web';
+        font-weight: bold;
+        float: left;
+        color: white;
+        height: 20px;
+        line-height: 22px;
+        margin: 0 8px 0 5px; }
+        #sandbox .element-rich-link.tone-live .live-ticker .bullet, #sandbox .element-membership.tone-live .live-ticker .bullet {
+          float: left;
+          margin: 6px 0 0 0;
+          -webkit-animation: blink 1.5s ease-in infinite;
+          animation-name: blink;
+          color: white; }
+          #sandbox .element-rich-link.tone-live .live-ticker .bullet:before, #sandbox .element-membership.tone-live .live-ticker .bullet:before {
+            background-color: white; }
+      #sandbox .element-rich-link.tone-live .rich-link-byline, #sandbox .element-membership.tone-live .rich-link-byline {
+        font-weight: 600;
+        display: none;
+        color: #fdadba; }
+      #sandbox .element-rich-link.tone-live.has-byline .rich-link-byline, #sandbox .element-membership.tone-live.has-byline .rich-link-byline {
+        display: block; }
+      #sandbox .element-rich-link.tone-live.has-quote a:before, #sandbox .element-membership.tone-live.has-quote a:before {
+        content: " ";
+        font-family: 'Guardian Icons';
+        font-size: 1.9rem;
+        color: #fdadba; }
+      #sandbox .element-rich-link.tone-live a, #sandbox .element-membership.tone-live a {
+        color: #fff; }
+      #sandbox .element-rich-link.tone-live:after, #sandbox .element-membership.tone-live:after {
+        content: "";
+        color: #fdadba;
+        font-family: 'Guardian Icons';
+        padding: 0 0 0 5px; }
+      #sandbox .element-rich-link.tone-live:hover:after, #sandbox .element-membership.tone-live:hover:after {
         content: ""; }
     #sandbox .element-rich-link p, #sandbox .element-membership p {
       margin: 0px 0px !important;
