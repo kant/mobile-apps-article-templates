@@ -1,3 +1,8 @@
+@mixin rich-link-byline{
+	    font-weight: 600;
+		display: none;	
+}
+
 
 .element-rich-link, .element-membership {
    /* border-top: 1px dotted color(neutral-3);
@@ -29,15 +34,42 @@
     }
     
     & a{
-	text-shadow: none !important;  
-	margin: 0 0 25px 0; 
+		text-shadow: none !important;  
+		margin: 0 0 0 0; 
     }
+    
+    & .rich-link-content{
+	    margin: 0 0 15px 0;
+    }
+    
+    //Card styles for news rich link
      
     &.tone-news{
-	color: color(shade-1);
-    background-color: color(shade-8);
-    border-top: 1px solid color(tone-news-accent);
-    border-bottom: 1px solid color(shade-4);
+		color: color(shade-1);
+	    background-color: color(shade-8);
+	    border-top: 1px solid color(tone-news-accent);
+	    border-bottom: 1px solid color(shade-4);
+    
+    &.has-quote{
+		& a:before{
+		content: " ";
+		font-family: 'Guardian Icons';
+		color: color(tone-news);
+		font-size: 1.9rem;    
+	    }
+    }
+    
+    & .rich-link-byline{
+	    color: color(tone-news);
+	    @include rich-link-byline;
+    }
+    
+    &.has-byline{
+	    & .rich-link-byline{
+		    display: block;
+	    }
+    }
+
     
     & a{
 	color: color(shade-1);
@@ -55,14 +87,28 @@
     }
     }
     
-  	  
-	  &.tone-comment{
-    background-color: color(tone-comment-bg);
-    border-top: 1px solid color(tone-comment-accent);
-    border-bottom: 1px solid color(shade-4);
-   
+    //Card styles for comment rich link
+    
+      	  
+	&.tone-comment{
+	    background-color: color(tone-comment-bg);
+	    border-top: 1px solid color(tone-comment-accent);
+	    border-bottom: 1px solid color(shade-4);
+		
+	
 	& a{
-	color: color(tone-comment-text);
+		color: color(tone-comment-text);
+    }
+    
+    & .rich-link-byline{
+	    color: color(tone-comment);
+	    @include rich-link-byline;
+    }
+    
+    &.has-byline{
+	    & .rich-link-byline{
+		    display: block;
+	    }
     }
     
     & a:before{
@@ -84,18 +130,85 @@
     }
     }
     
+    //Card styles for feature rich link
+    
     &.tone-feature{
-    background-color: color(tone-feature1);
-    border-top: 1px solid color(tone-feature1-accent);
-    border-bottom: 1px solid color(shade-4);
+	    background-color: color(tone-feature1);
+	    border-top: 1px solid color(tone-feature1-accent2);
+	    border-bottom: 1px solid color(shade-4);
+    
+    &.has-quote{
+	    & a:before{
+			content: " ";
+			font-family: 'Guardian Icons';
+			color: color(tone-feature1-accent2);
+			font-size: 1.9rem;    
+	    }
+    }
+    
+    & .rich-link-byline{
+	    color: color(tone-feature1-accent2);
+	    @include rich-link-byline;
+    }
+    
+    &.has-byline{
+	    & .rich-link-byline{
+		    display: block;
+	    }
+    }
+
     
     & a{
-	color: color(shade-7);
+		color: color(shade-7);
     }
     
     &:after{
 	    content:"";
-	    color: color(shade-7);
+	    color: color(tone-feature1-accent2);
+		font-family: 'Guardian Icons';
+		padding: 0 0 0 5px;
+    }
+    
+    &:hover:after{
+	    content: "";
+    }
+    }
+    
+    //Card styles for media rich link
+    
+     &.tone-media{
+	    background-color: color(shade-1);
+	    border-top: 1px solid color(tone-media);
+	    border-bottom: 1px solid color(shade-4);
+    
+    & .rich-link-byline{
+	    color: color(tone-media);
+	    @include rich-link-byline;
+    }
+    
+    &.has-byline{
+	    & .rich-link-byline{
+		    display: block;
+	    }
+    }
+
+    
+    &.has-quote{
+	    & a:before{
+			content: " ";
+			font-family: 'Guardian Icons';
+			color: color(tone-media);
+			font-size: 1.9rem;    
+	    }
+    }
+    
+    & a{
+		color: color(shade-7);
+    }
+    
+    &:after{
+	    content:"";
+	    color: color(tone-media);
 		font-family: 'Guardian Icons';
 		padding: 0 0 0 5px;
     }

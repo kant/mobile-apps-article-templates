@@ -6622,12 +6622,25 @@
       height: auto; }
     #sandbox .element-rich-link a, #sandbox .element-membership a {
       text-shadow: none !important;
-      margin: 0 0 25px 0; }
+      margin: 0 0 0 0; }
+    #sandbox .element-rich-link .rich-link-content, #sandbox .element-membership .rich-link-content {
+      margin: 0 0 15px 0; }
     #sandbox .element-rich-link.tone-news, #sandbox .element-membership.tone-news {
       color: #333;
       background-color: #f6f6f6;
       border-top: 1px solid #4bc6df;
       border-bottom: 1px solid #dcdad5; }
+      #sandbox .element-rich-link.tone-news.has-quote a:before, #sandbox .element-membership.tone-news.has-quote a:before {
+        content: " ";
+        font-family: 'Guardian Icons';
+        color: #005689;
+        font-size: 1.9rem; }
+      #sandbox .element-rich-link.tone-news .rich-link-byline, #sandbox .element-membership.tone-news .rich-link-byline {
+        color: #005689;
+        font-weight: 600;
+        display: none; }
+      #sandbox .element-rich-link.tone-news.has-byline .rich-link-byline, #sandbox .element-membership.tone-news.has-byline .rich-link-byline {
+        display: block; }
       #sandbox .element-rich-link.tone-news a, #sandbox .element-membership.tone-news a {
         color: #333; }
       #sandbox .element-rich-link.tone-news:after, #sandbox .element-membership.tone-news:after {
@@ -6643,6 +6656,12 @@
       border-bottom: 1px solid #dcdad5; }
       #sandbox .element-rich-link.tone-comment a, #sandbox .element-membership.tone-comment a {
         color: #2d2a26; }
+      #sandbox .element-rich-link.tone-comment .rich-link-byline, #sandbox .element-membership.tone-comment .rich-link-byline {
+        color: #e6711b;
+        font-weight: 600;
+        display: none; }
+      #sandbox .element-rich-link.tone-comment.has-byline .rich-link-byline, #sandbox .element-membership.tone-comment.has-byline .rich-link-byline {
+        display: block; }
       #sandbox .element-rich-link.tone-comment a:before, #sandbox .element-membership.tone-comment a:before {
         content: " ";
         font-family: 'Guardian Icons';
@@ -6657,16 +6676,51 @@
         content: ""; }
     #sandbox .element-rich-link.tone-feature, #sandbox .element-membership.tone-feature {
       background-color: #951c55;
-      border-top: 1px solid #b82266;
+      border-top: 1px solid #fdadba;
       border-bottom: 1px solid #dcdad5; }
+      #sandbox .element-rich-link.tone-feature.has-quote a:before, #sandbox .element-membership.tone-feature.has-quote a:before {
+        content: " ";
+        font-family: 'Guardian Icons';
+        color: #fdadba;
+        font-size: 1.9rem; }
+      #sandbox .element-rich-link.tone-feature .rich-link-byline, #sandbox .element-membership.tone-feature .rich-link-byline {
+        color: #fdadba;
+        font-weight: 600;
+        display: none; }
+      #sandbox .element-rich-link.tone-feature.has-byline .rich-link-byline, #sandbox .element-membership.tone-feature.has-byline .rich-link-byline {
+        display: block; }
       #sandbox .element-rich-link.tone-feature a, #sandbox .element-membership.tone-feature a {
         color: #fff; }
       #sandbox .element-rich-link.tone-feature:after, #sandbox .element-membership.tone-feature:after {
         content: "";
-        color: #fff;
+        color: #fdadba;
         font-family: 'Guardian Icons';
         padding: 0 0 0 5px; }
       #sandbox .element-rich-link.tone-feature:hover:after, #sandbox .element-membership.tone-feature:hover:after {
+        content: ""; }
+    #sandbox .element-rich-link.tone-media, #sandbox .element-membership.tone-media {
+      background-color: #333;
+      border-top: 1px solid #fb0;
+      border-bottom: 1px solid #dcdad5; }
+      #sandbox .element-rich-link.tone-media .rich-link-byline, #sandbox .element-membership.tone-media .rich-link-byline {
+        color: #fb0;
+        font-weight: 600;
+        display: none; }
+      #sandbox .element-rich-link.tone-media.has-byline .rich-link-byline, #sandbox .element-membership.tone-media.has-byline .rich-link-byline {
+        display: block; }
+      #sandbox .element-rich-link.tone-media.has-quote a:before, #sandbox .element-membership.tone-media.has-quote a:before {
+        content: " ";
+        font-family: 'Guardian Icons';
+        color: #fb0;
+        font-size: 1.9rem; }
+      #sandbox .element-rich-link.tone-media a, #sandbox .element-membership.tone-media a {
+        color: #fff; }
+      #sandbox .element-rich-link.tone-media:after, #sandbox .element-membership.tone-media:after {
+        content: "";
+        color: #fb0;
+        font-family: 'Guardian Icons';
+        padding: 0 0 0 5px; }
+      #sandbox .element-rich-link.tone-media:hover:after, #sandbox .element-membership.tone-media:hover:after {
         content: ""; }
     #sandbox .element-rich-link p, #sandbox .element-membership p {
       margin: 0px 0px !important;
