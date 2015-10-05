@@ -25,7 +25,7 @@
         }
     }
 
-    .audio-player__slider__knob {
+    .audio-player__handle {
         background-color: color(tone-podcast);
     }
 
@@ -62,7 +62,6 @@
         }*/
 
         .card__titletext {         
-            margin-bottom: 4px;
             text-overflow: ellipsis;
             overflow-y: hidden;
             word-wrap: break-word;

@@ -2,12 +2,12 @@
 define([
     'bean',
     'bonzo',
-    'mobileSlider',
+    'noUiSlider',
     'modules/$'
 ], function (
     bean,
     bonzo,
-    mobileSlider,
+    noUiSlider,
     $
 ) {
     'use strict';
@@ -21,68 +21,78 @@ define([
 
         audioSlider: function () {
             var audioCurrent,
+                audioDuration,
+                slider = $('#audio-player-range-slider')[0],
+                $played = $('.audio-player__played'),
+                $remaining = $('.audio-player__remaining'),
                 down,
-                slider1,
-
 
                 secondsTimeSpanToHMS = function (s) {
                     var m = Math.floor(s / 60);
                     s -= m * 60;
                     return (m < 10 ? '0' + m : m) + ":" + (s < 10 ? '0' + s : s);
+                },
+
+                updateRemaining = function(current) {
+                    $played.val(secondsTimeSpanToHMS(current));
+                    $remaining.val("-" + secondsTimeSpanToHMS(audioDuration - current));
                 };
 
                 window.superAudioSlider = function (current, duration, platform) {
-                    if (platform === "iOS") {
-                        if (down === 1) {
-                            return;
-                        }
-                    } else if ($(".cutout__container").attr("data-background") === null && !$("body").hasClass("media")) {
+                    // if (platform === "iOS") {
+                    //     if (down === 1) {
+                    //         return;
+                    //     }
+                    // } else 
+                    if ($(".cutout__container").attr("data-background") === null && !$("body").hasClass("media")) {
                         window.audioBackground(duration);
                         bean.on(window, 'resize.audioPlayer orientationchange.audioPlayer', window.ThrottleDebounce.debounce(100, false, function () {
                             window.audioBackground(duration);
                         }));
                     }
 
-                    $(".audio-player__slider__knob").removeAttr("style");
-                    slider1 = new MobileRangeSlider('audio-player__slider', {
-                        value: current,
-                        min: 0,
-                        max: duration,
-                        change: function (percentage) {
-                            audioCurrent = percentage;
-                            $(".audio-player__slider__played").val(secondsTimeSpanToHMS(percentage));
-                            $(".audio-player__slider__remaining").val("-" + secondsTimeSpanToHMS(duration - percentage));
+                    // // Attach an on change event to the slider to jump to final time choice 
+                    // bean.on($('#audio-player-slider')[0], 'input.audioPlayer', function() {
+                    //     window.location("x-gu://setPlayerTime/" + $('#audio-player-slider').val());
+                    // });
+
+                    audioDuration = duration;
+                    noUiSlider.create(slider, {
+                        start: current,
+                        step: 1,
+                        range: {
+                            'min': 0,
+                            'max': audioDuration
                         }
+                    });
+                    updateRemaining(current);
+
+                    slider.noUiSlider.on('slide', function ( values, handle, unencoded ) {
+                        console.log('in noUiSlider.on(slide)');
+                        updateRemaining(values[handle]);
+                    });
+
+                    slider.noUiSlider.on('change', function ( values, handle, unencoded ) {
+                        console.log('in noUiSlider.on(change)');
+                        audioCurrent = values[handle];
+                        var iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", "x-gu://setPlayerTime/" + audioCurrent);
+                        document.documentElement.appendChild(iframe);
+                        iframe.parentNode.removeChild(iframe);
+                        iframe = null;
                     });
 
                 };
 
                 window.updateSlider = function (current, platform) {
-                    if (platform === "iOS") {
-                        if (down === 1) {
-                            return;
-                        }
+                    audioCurrent = current;
+                    updateRemaining(audioCurrent);
+                    // only move the handle along if it is not currently active
+                    console.log($('.audio-player__handle').hasClass('noUi-active'));
+                    if (!$('.audio-player__handle').hasClass('noUi-active')) {
+                        console.log('set the slider');
+                        slider.noUiSlider.set(audioCurrent);
                     }
-                    slider1.setValue(current);
-                };
-
-                document.addEventListener('touchstart', function () {
-                    down = 1;
-                }, false);
-
-                document.addEventListener('touchend', function () {
-                    down = 0;
-                }, false);
-
-                /* Caution: Hot Mess */
-                MobileRangeSlider.prototype.end = function () {
-                    this.removeEvents("move");
-                    this.removeEvents("end");
-                    var iframe = document.createElement("iframe");
-                    iframe.setAttribute("src", "x-gu://setPlayerTime/" + audioCurrent);
-                    document.documentElement.appendChild(iframe);
-                    iframe.parentNode.removeChild(iframe);
-                    iframe = null;
                 };
             },
 
@@ -147,7 +157,6 @@ define([
                 this.initialised = true;
                 modules.audioSlider();
                 modules.setupGlobals();
-                // console.info("Audio ready");
             }
         };
 

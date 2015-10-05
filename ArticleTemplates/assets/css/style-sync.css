@@ -2287,85 +2287,162 @@ Play a piece of audio, i.e. a podcast.
   height: 68px;
   width: 100%;
   z-index: 1; }
+  .audio-player__button {
+    position: absolute;
+    top: 12px;
+    left: 12px; }
+    .audio-player__button.touchpoint--primary .touchpoint__button {
+      color: #333;
+      background-color: #fb0; }
+      .audio-player__button.touchpoint--primary .touchpoint__button:active {
+        background-color: #ffd35c; }
+  .audio-player__button--loading {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 44px;
+    height: 44px;
+    background-color: white;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+    border: 2px solid #fff;
+    display: none; }
+  .audio-player__slider-wrapper:before {
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: 7px;
+    content: "";
+    background-color: #999; }
+  .audio-player__slider {
+    outline: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -webkit-touch-callout: none; }
+  .audio-player__played, .audio-player__remaining {
+    display: inline-block;
+    width: 49%;
+    padding: 0 0 8px;
+    margin: 0;
+    color: #fff;
+    opacity: 1;
+    font-family: "Guardian Agate Sans 1 Web", sans-serif;
+    font-weight: normal;
+    background: transparent;
+    border: 0; }
+    @media all and (max-width: 40.62em) {
+      .audio-player__played, .audio-player__remaining {
+        font-size: 1.4rem;
+        line-height: 2rem; } }
+    @media all and (min-width: 40.63em) {
+      .audio-player__played, .audio-player__remaining {
+        font-size: 1.6rem;
+        line-height: 2.2rem; } }
+  .audio-player__remaining {
+    text-align: right;
+    right: 0; }
+  .audio-player__handle {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #ffd35c;
+    cursor: default; }
 
-.audio-player__button {
-  position: absolute;
-  top: 12px;
-  left: 12px; }
-  .audio-player__button.touchpoint--primary .touchpoint__button {
-    color: #333;
-    background-color: #fb0; }
-    .audio-player__button.touchpoint--primary .touchpoint__button:active {
-      background-color: #ffd35c; }
-
-.audio-player__button--loading {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 44px;
-  height: 44px;
-  background-color: white;
-  border-top-right-radius: 30px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 29px;
-  border-bottom-right-radius: 29px;
-  border: 2px solid #fff;
-  display: none; }
-
-.audio-player__slider {
-  outline: 0;
-  height: 100%;
-  width: 100%;
-  position: relative;
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: none;
-  -webkit-touch-callout: none; }
+  -ms-touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
-.audio-player__slider__played,
-.audio-player__slider__remaining {
-  color: #fff;
-  opacity: 1;
-  font-family: "Guardian Agate Sans 1 Web", sans-serif;
-  font-weight: normal;
-  background: transparent;
-  position: absolute;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  margin-top: -3px; }
-  @media all and (max-width: 40.62em) {
-    .audio-player__slider__played,
-    .audio-player__slider__remaining {
-      font-size: 1.4rem;
-      line-height: 2rem; } }
-  @media all and (min-width: 40.63em) {
-    .audio-player__slider__played,
-    .audio-player__slider__remaining {
-      font-size: 1.6rem;
-      line-height: 2.2rem; } }
+.noUi-target {
+  position: relative;
+  direction: ltr; }
 
-.audio-player__slider__remaining {
-  text-align: right;
-  right: 0; }
-
-.audio-player__slider__track {
-  background-color: #999;
-  height: 2px;
+.noUi-base {
   width: 100%;
-  position: absolute;
-  top: calc(50% + 9px);
-  right: 0;
-  left: 0; }
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  /* Fix 401 */ }
 
-.audio-player__slider__knob {
-  background-color: #ffd35c;
-  margin-top: 24px;
-  border-radius: 50%;
-  padding: 0;
-  height: 16px;
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+.noUi-stacking .audio-player__handle {
+  /* This class is applied to the lower origin when
+     its values is > 50%. */
+  z-index: 10; }
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s; }
+
+.noUi-state-drag * {
+  cursor: inherit !important; }
+
+/* Painting and performance;
+ * Browsers can paint handles in their own layer.
+ */
+.noUi-base {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+/* Slider size and handle placement;
+ */
+.noUi-horizontal {
+  height: 16px; }
+
+.noUi-horizontal .audio-player__handle {
   width: 16px;
-  position: absolute; }
+  height: 16px;
+  left: -8px;
+  top: 0; }
+
+/* Styling;
+ */
+.noUi-background {
+  background: transparent;
+  width: calc(100% - 16px);
+  left: 8px; }
+
+/* Handles and cursors;
+ */
+.noUi-dragable {
+  cursor: w-resize; }
+
+.noUi-vertical .noUi-dragable {
+  cursor: n-resize; }
+
+/* Handle stripes;
+ */
+/* Disabled state;
+ */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #B8B8B8; }
+
+[disabled].noUi-origin,
+[disabled] .audio-player__handle {
+  cursor: not-allowed; }
 
 /*doc
 ---
@@ -3048,10 +3125,10 @@ body[data-content-type="video"] .article--visual .content__labels:first-child::b
 .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player {
   background-color: #636363; }
 .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__button.touchpoint--primary .touchpoint__button,
-.is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__slider__knob {
+.is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__handle {
   background-color: #878787; }
   .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__button.touchpoint--primary .touchpoint__button:active,
-  .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__slider__knob:active {
+  .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__handle:active {
     background-color: #6e6e6e; }
 .is_advertising:not(.tone--review):not(.tone--analysis).tone--podcast .audio-player__slider__track {
   background-color: #cbc9c5; }
@@ -3559,7 +3636,7 @@ body[data-content-type="video"] .article--visual .content__labels:first-child::b
   .tone--podcast .audio-player__button.touchpoint--primary .touchpoint__button:active {
     background-color: #4bc6df;
     /* NB Need new colour???!!! */ }
-.tone--podcast .audio-player__slider__knob {
+.tone--podcast .audio-player__handle {
   background-color: #a7d8f2; }
 .tone--podcast .article {
   border-top-color: #a7d8f2; }
@@ -3583,7 +3660,6 @@ body[data-content-type="video"] .article--visual .content__labels:first-child::b
       color: #333;
       display: block; }
   .tone--podcast .article__header .card__titletext {
-    margin-bottom: 4px;
     text-overflow: ellipsis;
     overflow-y: hidden;
     word-wrap: break-word;
