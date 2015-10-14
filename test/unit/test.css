@@ -7151,64 +7151,57 @@
         width: 53.68421%; } }
   #sandbox .match-stats {
     font-family: "Guardian Agate Sans 1 Web", sans-serif; }
-    #sandbox .match-stats .bar-chart,
-    #sandbox .match-stats .match-stats__shots span {
+    #sandbox .match-stats .bar-chart, #sandbox .match-stats__shots span {
       font-family: "Guardian Egyptian Web", Georgia, serif;
       font-weight: 600;
       margin: 0px 0px 12px 0px;
       display: block; }
       @media all and (max-width: 40.62em) {
-        #sandbox .match-stats .bar-chart,
-        #sandbox .match-stats .match-stats__shots span {
+        #sandbox .match-stats .bar-chart, #sandbox .match-stats__shots span {
           font-size: 1.7rem;
           line-height: 2.2rem; } }
       @media all and (min-width: 40.63em) {
-        #sandbox .match-stats .bar-chart,
-        #sandbox .match-stats .match-stats__shots span {
+        #sandbox .match-stats .bar-chart, #sandbox .match-stats__shots span {
           font-size: 2.2rem;
           line-height: 3rem; } }
-  #sandbox .match-stats__caption {
-    color: #333;
-    margin: 0px 0px 3px 0px; }
-    @media all and (max-width: 40.62em) {
-      #sandbox .match-stats__caption {
-        font-size: 1.4rem;
-        line-height: 2rem; } }
-    @media all and (min-width: 40.63em) {
-      #sandbox .match-stats__caption {
-        font-size: 1.6rem;
-        line-height: 2.2rem; } }
-  #sandbox .match-stats__shots {
-    margin: 0px 0px 12px 0px;
-    overflow: hidden; }
-  #sandbox .match-stats__shots__off,
-  #sandbox .match-stats__shots__on {
-    padding: 3px 6px; }
-    @media all and (max-width: 40.62em) {
-      #sandbox .match-stats__shots__off,
-      #sandbox .match-stats__shots__on {
-        font-size: 1.4rem;
-        line-height: 2rem; } }
-    @media all and (min-width: 40.63em) {
-      #sandbox .match-stats__shots__off,
-      #sandbox .match-stats__shots__on {
-        font-size: 1.6rem;
-        line-height: 2.2rem; } }
-  #sandbox .match-stats__shots__on {
-    width: 75%;
-    border: 2px solid #fff;
-    border-bottom: 0; }
-  #sandbox .match-stats__shots--home,
-  #sandbox .match-stats__shots--away {
-    background-image: url("../img/hor-bg.png");
-    background-size: 8px;
-    width: 50%;
-    float: left; }
-  #sandbox .match-stats__shots--home .match-stats__shots__on {
-    float: right;
-    border-right: 0; }
-  #sandbox .match-stats__shots--away .match-stats__shots__on {
-    border-left: 0; }
+    #sandbox .match-stats__caption {
+      color: #333;
+      margin: 0px 0px 3px 0px; }
+      @media all and (max-width: 40.62em) {
+        #sandbox .match-stats__caption {
+          font-size: 1.4rem;
+          line-height: 2rem; } }
+      @media all and (min-width: 40.63em) {
+        #sandbox .match-stats__caption {
+          font-size: 1.6rem;
+          line-height: 2.2rem; } }
+    #sandbox .match-stats__shots {
+      margin: 0px 0px 12px 0px;
+      overflow: hidden; }
+    #sandbox .match-stats__shots__off, #sandbox .match-stats__shots__on {
+      padding: 3px 6px; }
+      @media all and (max-width: 40.62em) {
+        #sandbox .match-stats__shots__off, #sandbox .match-stats__shots__on {
+          font-size: 1.4rem;
+          line-height: 2rem; } }
+      @media all and (min-width: 40.63em) {
+        #sandbox .match-stats__shots__off, #sandbox .match-stats__shots__on {
+          font-size: 1.6rem;
+          line-height: 2.2rem; } }
+    #sandbox .match-stats__shots__on {
+      width: 75%;
+      border: 2px solid #fff;
+      border-bottom: 0; }
+    #sandbox .match-stats__shots--home, #sandbox .match-stats__shots--away {
+      background-image: url("../img/hor-bg.png");
+      background-size: 8px;
+      width: 50%;
+      float: left; }
+    #sandbox .match-stats__shots--home .match-stats__shots__on {
+      float: right;
+      border-right: 0; }
+    #sandbox .match-stats__shots--away .match-stats__shots__on {
+      border-left: 0; }
   #sandbox .match-status {
     color: #767676;
     font-family: "Guardian Agate Sans 1 Web", sans-serif;

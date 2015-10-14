@@ -92,55 +92,55 @@ Display comparison of possession, goal attempts, corners and fouls that occurred
     font-family: $agate-sans;
 
     .bar-chart,
-    .match-stats__shots span {
+    &__shots span {
         font-family: $egyptian-display;
         font-weight: 600;
         @include standfirst();
         margin: base-px(0, 0, 1, 0);
         display: block;
     }
-}
 
-.match-stats__caption {
-    color: color(shade-1);
-    @include meta();
-    margin: base-px(0, 0, .25, 0);
-}
-
-.match-stats__shots {
-    margin: base-px(0, 0, 1, 0);
-    overflow: hidden;
-}
-
-.match-stats__shots__off,
-.match-stats__shots__on {
-    @include meta();
-    padding: base-px(.25, .5);
-}
-
-.match-stats__shots__on {
-    width: 75%;
-    border: 2px solid #fff;
-    border-bottom: 0;
-}
-
-.match-stats__shots--home,
-.match-stats__shots--away {
-    background-image: url('../img/hor-bg.png');
-    background-size: 8px;
-    width: 50%;
-    float: left;
-}
-
-.match-stats__shots--home {
-    .match-stats__shots__on {
-        float: right;
-        border-right: 0;
+    &__caption {
+        color: color(shade-1);
+        @include meta();
+        margin: base-px(0, 0, .25, 0);
     }
-}
 
-.match-stats__shots--away {
-    .match-stats__shots__on {
-        border-left: 0;
+    &__shots {
+        margin: base-px(0, 0, 1, 0);
+        overflow: hidden;
+    }
+
+    &__shots__off,
+    &__shots__on {
+        @include meta();
+        padding: base-px(.25, .5);
+    }
+
+    &__shots__on {
+        width: 75%;
+        border: 2px solid #fff;
+        border-bottom: 0;
+    }
+
+    &__shots--home,
+    &__shots--away {
+        background-image: url('../img/hor-bg.png');
+        background-size: 8px;
+        width: 50%;
+        float: left;
+    }
+
+    &__shots--home {
+        .match-stats__shots__on {
+            float: right;
+            border-right: 0;
+        }
+    }
+
+    &__shots--away {
+        .match-stats__shots__on {
+            border-left: 0;
+        }
     }
 }
