@@ -34,7 +34,7 @@ define([
                     var tabletMpuHtml = "<div class='advert-slot advert-slot--mpu advert-slot--mpu--tablet'>" +
                                             "<div class='advert-slot__label'>" +
                                                 "Advertisement" +
-                                                "<a class='advert-slot__action' href='x-gu://subscribe'>" +
+                                                "<a class='advert-slot__action' href='x-gu://subscribe/article'>" +
                                                     "Hide" +
                                                     "<span data-icon='&#xe04F;'></span>" +
                                                 "</a>" +
@@ -52,7 +52,7 @@ define([
                     var mobileMpuHtml = "<div class='advert-slot advert-slot--mpu advert-slot--mpu--mobile'>" +
                                             "<div class='advert-slot__label'>" +
                                                 "Advertisement" +
-                                                "<a class='advert-slot__action' href='x-gu://subscribe'>" +
+                                                "<a class='advert-slot__action' href='x-gu://subscribe/article'>" +
                                                     "Hide" +
                                                     "<span data-icon='&#xe04F;'></span>" +
                                                 "</a>" +
