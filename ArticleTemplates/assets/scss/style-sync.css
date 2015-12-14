@@ -212,7 +212,8 @@ MPU
   font-family: "Guardian Agate Sans 1 Web", sans-serif;
   margin: 6px 12px;
   padding-right: 20px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
   @media all and (max-width: 40.62em) {
     .container__outbrain .advert-slot__action {
       font-size: 1.4rem;
@@ -1739,14 +1740,14 @@ Displays a cricket header.
 @-webkit-keyframes fadeOutIn {
   7% {
     opacity: 1; }
-  93.0% {
+  93% {
     opacity: 1; }
   to {
     opacity: 0; } }
 @keyframes fadeOutIn {
   7% {
     opacity: 1; }
-  93.0% {
+  93% {
     opacity: 1; }
   to {
     opacity: 0; } }
