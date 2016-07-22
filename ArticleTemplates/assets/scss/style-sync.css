@@ -4313,28 +4313,32 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
 .article--comment .article__body,
 .article--feature .article__body,
 .article--audio .article__body,
-.article--immersive .article__body {
+.article--immersive .article__body,
+.article--heroic .article__body {
   padding: 12px; }
   @media all and (min-width: 40.63em) and (max-width: 56.24em) {
     .article--standard .article__body,
     .article--comment .article__body,
     .article--feature .article__body,
     .article--audio .article__body,
-    .article--immersive .article__body {
+    .article--immersive .article__body,
+    .article--heroic .article__body {
       padding-right: 23.94366%; } }
   @media all and (min-width: 56.25em) {
     .article--standard .article__body,
     .article--comment .article__body,
     .article--feature .article__body,
     .article--audio .article__body,
-    .article--immersive .article__body {
+    .article--immersive .article__body,
+    .article--heroic .article__body {
       padding-right: 24.21053%; } }
   @media all and (min-width: 75em) {
     .article--standard .article__body,
     .article--comment .article__body,
     .article--feature .article__body,
     .article--audio .article__body,
-    .article--immersive .article__body {
+    .article--immersive .article__body,
+    .article--heroic .article__body {
       margin: 0 auto;
       padding-left: 240px;
       padding-right: 340px;
@@ -4353,7 +4357,10 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
   .article--audio .article__body .element-placeholder,
   .article--immersive .article__body .figure-wide,
   .article--immersive .article__body .element-video,
-  .article--immersive .article__body .element-placeholder {
+  .article--immersive .article__body .element-placeholder,
+  .article--heroic .article__body .figure-wide,
+  .article--heroic .article__body .element-video,
+  .article--heroic .article__body .element-placeholder {
     margin: 12px -12px;
     width: auto; }
     @media all and (min-width: 40.63em) {
@@ -4371,7 +4378,10 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
       .article--audio .article__body .element-placeholder,
       .article--immersive .article__body .figure-wide,
       .article--immersive .article__body .element-video,
-      .article--immersive .article__body .element-placeholder {
+      .article--immersive .article__body .element-placeholder,
+      .article--heroic .article__body .figure-wide,
+      .article--heroic .article__body .element-video,
+      .article--heroic .article__body .element-placeholder {
         width: 135%; } }
     @media all and (min-width: 75em) {
       .article--standard .article__body .figure-wide,
@@ -4388,7 +4398,10 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
       .article--audio .article__body .element-placeholder,
       .article--immersive .article__body .figure-wide,
       .article--immersive .article__body .element-video,
-      .article--immersive .article__body .element-placeholder {
+      .article--immersive .article__body .element-placeholder,
+      .article--heroic .article__body .figure-wide,
+      .article--heroic .article__body .element-video,
+      .article--heroic .article__body .element-placeholder {
         margin-left: 0;
         margin-right: 0;
         width: 100%; } }
@@ -4396,34 +4409,39 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
   .article--comment .article__body .element-interactive,
   .article--feature .article__body .element-interactive,
   .article--audio .article__body .element-interactive,
-  .article--immersive .article__body .element-interactive {
+  .article--immersive .article__body .element-interactive,
+  .article--heroic .article__body .element-interactive {
     width: auto; }
     @media all and (min-width: 40.63em) and (max-width: 56.24em) {
       .article--standard .article__body .element-interactive,
       .article--comment .article__body .element-interactive,
       .article--feature .article__body .element-interactive,
       .article--audio .article__body .element-interactive,
-      .article--immersive .article__body .element-interactive {
+      .article--immersive .article__body .element-interactive,
+      .article--heroic .article__body .element-interactive {
         width: calc(131.48148% - 12px); } }
     @media all and (min-width: 56.25em) {
       .article--standard .article__body .element-interactive,
       .article--comment .article__body .element-interactive,
       .article--feature .article__body .element-interactive,
       .article--audio .article__body .element-interactive,
-      .article--immersive .article__body .element-interactive {
+      .article--immersive .article__body .element-interactive,
+      .article--heroic .article__body .element-interactive {
         width: calc(131.94444% - 12px); } }
   @media all and (min-width: 40.63em) {
     .article--standard .article__body .element-video,
     .article--comment .article__body .element-video,
     .article--feature .article__body .element-video,
     .article--audio .article__body .element-video,
-    .article--immersive .article__body .element-video {
+    .article--immersive .article__body .element-video,
+    .article--heroic .article__body .element-video {
       padding-bottom: 75.375%; } }
 .article--standard .aside,
 .article--comment .aside,
 .article--feature .aside,
 .article--audio .aside,
-.article--immersive .aside {
+.article--immersive .aside,
+.article--heroic .aside {
   float: right;
   clear: right; }
   @media all and (min-width: 28.13em) {
@@ -4431,7 +4449,8 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
     .article--comment .aside,
     .article--feature .aside,
     .article--audio .aside,
-    .article--immersive .aside {
+    .article--immersive .aside,
+    .article--heroic .aside {
       margin: 0px 0px 24px 24px;
       padding: 12px 12px 12px 0px; } }
   @media all and (min-width: 28.13em) and (max-width: 40.62em) {
@@ -4439,7 +4458,8 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
     .article--comment .aside,
     .article--feature .aside,
     .article--audio .aside,
-    .article--immersive .aside {
+    .article--immersive .aside,
+    .article--heroic .aside {
       margin-right: 12px;
       width: 36.17021%; } }
   @media all and (min-width: 40.63em) and (max-width: 56.24em) {
@@ -4447,7 +4467,8 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
     .article--comment .aside,
     .article--feature .aside,
     .article--audio .aside,
-    .article--immersive .aside {
+    .article--immersive .aside,
+    .article--heroic .aside {
       margin-right: -32.39437%;
       width: 32.39437%; } }
   @media all and (min-width: 56.25em) {
@@ -4455,7 +4476,8 @@ body.the-euro-minute.advert-config--tablet .article--liveblog .article__body--li
     .article--comment .aside,
     .article--feature .aside,
     .article--audio .aside,
-    .article--immersive .aside {
+    .article--immersive .aside,
+    .article--heroic .aside {
       margin-right: -32.63158%;
       width: 24.21053%; } }
 
@@ -6253,6 +6275,146 @@ body[data-content-type="video"] .article--visual .content__labels:first-child::b
   .tone--feature2 .quiz .quiz-scores__message,
   .tone--feature3 .quiz .quiz-scores__message {
     color: #b82266; }
+
+.tone--heroic .article__header {
+  height: 400px;
+  box-sizing: content-box;
+  padding-bottom: 36px;
+  position: relative;
+  margin-bottom: 22px;
+  z-index: 1; }
+.tone--heroic .article__header__main-media {
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%; }
+.tone--heroic .article__header__logo-background {
+  position: absolute;
+  width: 100%; }
+.tone--heroic .article__header__logo-background__logo-svg {
+  fill: #4bc6df;
+  opacity: .85;
+  width: 100%; }
+.tone--heroic .article__header__logo-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  z-index: 1; }
+.tone--heroic .article__header__logo-container__logo-svg {
+  float: right;
+  margin-top: 6px; }
+  @media all and (min-width: 28.13em) {
+    .tone--heroic .article__header__logo-container__logo-svg {
+      margin-right: 8px; } }
+  @media all and (min-width: 40.63em) {
+    .tone--heroic .article__header__logo-container__logo-svg {
+      margin-right: 12px; } }
+  @media all and (min-width: 56.25em) {
+    .tone--heroic .article__header__logo-container__logo-svg {
+      margin-right: 16px; } }
+  @media all and (min-width: 75em) {
+    .tone--heroic .article__header__logo-container__logo-svg {
+      margin-right: 20px; } }
+  .tone--heroic .article__header__logo-container__logo-svg path {
+    fill: #ffffff; }
+.tone--heroic .article__header__series-container {
+  position: relative;
+  max-width: 260px;
+  top: 36px; }
+  @media all and (min-width: 56.25em) {
+    .tone--heroic .article__header__series-container {
+      top: 0; } }
+.tone--heroic .article__header__series-container__content {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px; }
+.tone--heroic .article__header__series-container__content__background {
+  position: absolute;
+  top: -6px;
+  width: 260px; }
+.tone--heroic .article__header__series-container__content__background__svg {
+  opacity: .85;
+  width: 100%;
+  fill: #005689;
+  height: 100%; }
+.tone--heroic .article__header__series-container__content__links {
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  width: 260px; }
+.tone--heroic .article__header__series-container__content__links__title,
+.tone--heroic .article__header__series-container__content__links__byline {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Guardian Egyptian Web", Georgia, serif;
+  font-weight: 900;
+  line-height: 19px;
+  color: #ffffff; }
+.tone--heroic .article__header__headline {
+  top: 314px;
+  position: relative;
+  width: 100%; }
+.tone--heroic .article__header__headline__container {
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 auto; }
+.tone--heroic .article__header__headline__container__content {
+  max-width: 620px;
+  margin: 0 21px;
+  width: 100%;
+  margin: auto;
+  position: relative; }
+.tone--heroic .article__header__headline__container__content__background {
+  position: absolute;
+  width: 100%; }
+.tone--heroic .article__header__headline__container__content__background__svg {
+  fill: #4bc6df;
+  opacity: .85;
+  width: 100%; }
+.tone--heroic .article__header__headline__container__content h1 {
+  font-size: 28px;
+  line-height: 32px;
+  font-family: "Guardian Egyptian Web", Georgia, serif;
+  font-weight: normal;
+  position: absolute;
+  font-weight: 200;
+  color: #ffffff;
+  margin: 12px 0;
+  max-width: 580px;
+  padding: 0 20px; }
+.tone--heroic .article__body {
+  margin-top: -22px;
+  background-color: #fff; }
+.tone--heroic .article__body > .prose::before {
+  font-size: 3rem;
+  color: #345c52;
+  content: '\E092';
+  line-height: 0;
+  font-family: "Guardian Icons", Georgia, serif;
+  float: left;
+  padding-right: 8px;
+  padding-left: 2px;
+  padding-top: 4px;
+  font-size: 36px; }
+.tone--heroic .article__body > .prose > p:first-of-type {
+  line-height: 24px;
+  font-family: "Guardian Egyptian Web", Georgia, serif;
+  color: #345c52;
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 200; }
+.tone--heroic .article__body > .prose blockquote footer, .tone--heroic .article__body > .prose blockquote::before, .tone--heroic .article__body > .prose blockquote::after {
+  color: #345c52; }
+.tone--heroic .article__body > .prose > p:first-of-type {
+  line-height: 24px;
+  font-family: "Guardian Egyptian Web", Georgia, serif;
+  color: #345c52;
+  margin-top: 12px;
+  font-size: 22px;
+  font-weight: 200; }
 
 .tone--liveBlog .section__container {
   border-bottom: 1px rgba(255, 255, 255, 0.4) dotted; }
